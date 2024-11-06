@@ -3,13 +3,14 @@ package com.juechen.acm;
 import java.util.Scanner;
 
 /**
-  * ACM 输入模板（多数之和）
-  * @author ${author}
+  * ACM 输入模板
+  * @author ${author!'Juechen'}
 */
 public class MainTemplate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 <#if loop>
+        // 连续输入模式
         while (scanner.hasNext()) {
 </#if>
             // 读取输入元素个数
@@ -21,14 +22,33 @@ public class MainTemplate {
                 arr[i] = scanner.nextInt();
             }
 
-            // 处理问题逻辑，根据需要进行输出
-            // 示例：计算数组元素的和
-            int sum = 0;
+<#if operationType == "SUM">
+            int result = 0;
             for (int num : arr) {
-                sum += num;
+                result += num;
             }
+<#elseif operationType == "PRODUCT">
+            int result = 1;
+            for (int num : arr) {
+                result *= num;
+            }
+<#elseif operationType == "MAX">
+            int result = arr[0];
+            for (int num : arr) {
+                if (num > result) {
+                    result = num;
+                }
+            }
+<#elseif operationType == "MIN">
+            int result = arr[0];
+            for (int num : arr) {
+                if (num < result) {
+                    result = num;
+                }
+            }
+</#if>
 
-            System.out.println("${outputText}" + sum);
+            System.out.println("${outputText}" + result);
 <#if loop>
         }
 </#if>
