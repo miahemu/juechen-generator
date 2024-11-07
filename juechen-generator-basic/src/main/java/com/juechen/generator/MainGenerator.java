@@ -40,7 +40,7 @@ public class MainGenerator {
 
         // 动态模板路径设置
         String inputDynamicPath = Paths.get(parentPath, "src", "main", "resources", "templates", "MainTemplate.java.ftl").toString();
-        String outputDynamicPath = Paths.get(parentPath, "MainTemplate.java").toString();
+        String outputDynamicPath = Paths.get(parentPath, "acm-template", "src", "com", "juechen", "acm", "MainTemplate.java").toString();
 
         // 执行模板生成
         DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);

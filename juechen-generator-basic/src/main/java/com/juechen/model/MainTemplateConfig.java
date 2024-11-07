@@ -30,7 +30,7 @@ public class MainTemplateConfig {
     /**
      * 运算类型（sum, product, max, min等）
      */
-    private OperationType operationType;
+    private OperationType operationType = OperationType.SUM;
 
     /**
      * 操作类型的枚举定义
