@@ -3,6 +3,7 @@ package com.juechen.generator;
 import com.juechen.model.MainTemplateConfig;
 import freemarker.template.TemplateException;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 
@@ -31,16 +32,16 @@ public class MainGenerator {
     public static void doGenerator(Object model) throws IOException, TemplateException {
         // 获取项目根目录路径
         String projectPath = System.getProperty("user.dir");
-        String parentPath = Paths.get(projectPath, "juechen-generator-basic").toString();
-        String inputPath = Paths.get(projectPath, "juechen-generator-demo-projects", "acm-template").toString();
-        String outputPath = parentPath;
+        String parentPath = new File(projectPath).getParentFile().getAbsolutePath();
+        String inputPath = Paths.get(parentPath, "juechen-generator-demo-projects", "acm-template").toString();
+        String outputPath = projectPath;
 
         // 递归复制静态文件
         StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
 
         // 动态模板路径设置
-        String inputDynamicPath = Paths.get(parentPath, "src", "main", "resources", "templates", "MainTemplate.java.ftl").toString();
-        String outputDynamicPath = Paths.get(parentPath, "acm-template", "src", "com", "juechen", "acm", "MainTemplate.java").toString();
+        String inputDynamicPath = Paths.get(projectPath, "src", "main", "resources", "templates", "MainTemplate.java.ftl").toString();
+        String outputDynamicPath = Paths.get(projectPath, "acm-template", "src", "com", "juechen", "acm", "MainTemplate.java").toString();
 
         // 执行模板生成
         DynamicGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
@@ -50,7 +51,7 @@ public class MainGenerator {
      * 根据操作类型自动设置输出文本的默认值
      * @param config 模板配置
      */
-    private static void setDefaultOutputText(MainTemplateConfig config) {
+    public static void setDefaultOutputText(MainTemplateConfig config) {
         if (config.getOutputText() == null || config.getOutputText().isEmpty()) {
             switch (config.getOperationType()) {
                 case SUM:
