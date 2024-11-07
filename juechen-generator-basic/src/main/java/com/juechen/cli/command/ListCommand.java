@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * @author Juechen
  * @version : ListCommand.java
+ * @describe 相当于遥控器的某个按钮
  */
 @Command(name = "list", description = "查看文件列表", mixinStandardHelpOptions = true)
 public class ListCommand implements Runnable {

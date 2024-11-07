@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 /**
  * @author Juechen
  * @version : ConfigCommand.java
+ * @describe 相当于遥控器的某个按钮
  */
 @Command(name = "config", description = "查看参数信息", mixinStandardHelpOptions = true)
 public class ConfigCommand implements Runnable {

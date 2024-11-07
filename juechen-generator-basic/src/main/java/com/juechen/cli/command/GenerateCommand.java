@@ -14,6 +14,7 @@ import static com.juechen.generator.MainGenerator.setDefaultOutputText;
 /**
  * @author Juechen
  * @version : GenerateCommand.java
+ * @describe 相当于遥控器的某个按钮
  */
 @Command(name = "generate", description = "生成代码", mixinStandardHelpOptions = true)
 @Data

@@ -9,6 +9,7 @@ import picocli.CommandLine.Command;
 /**
  * @author Juechen
  * @version : CommandExecutor.java
+ * @describe 相当于遥控器
  */
 @Command(name = "juechen", mixinStandardHelpOptions = true)
 public class CommandExecutor implements Runnable {

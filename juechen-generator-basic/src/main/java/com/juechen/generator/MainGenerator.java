@@ -14,21 +14,6 @@ import java.nio.file.Paths;
  */
 public class MainGenerator {
 
-    public static void main(String[] args) throws TemplateException, IOException {
-        MainTemplateConfig config = new MainTemplateConfig();
-        config.setLoop(true);
-        config.setAuthor("Juechen");
-        config.setOperationType(MainTemplateConfig.OperationType.SUM);
-//        config.setOperationType(MainTemplateConfig.OperationType.PRODUCT);
-//        config.setOperationType(MainTemplateConfig.OperationType.MAX);
-//        config.setOperationType(MainTemplateConfig.OperationType.MIN);
-
-        // 根据操作类型自动设置默认输出文本
-        setDefaultOutputText(config);
-
-        doGenerator(config);
-    }
-
     public static void doGenerator(Object model) throws IOException, TemplateException {
         // 获取项目根目录路径
         String projectPath = System.getProperty("user.dir");
