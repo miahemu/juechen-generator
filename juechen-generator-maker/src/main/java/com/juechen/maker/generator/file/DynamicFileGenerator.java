@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  * @author Juechen
- * @version : DynamicGenerator.java
+ * @version : DynamicFileGenerator.java
  */
 public class DynamicFileGenerator {
 

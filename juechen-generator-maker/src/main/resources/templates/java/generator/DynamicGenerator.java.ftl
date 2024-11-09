@@ -1,4 +1,4 @@
-package com.juechen.generator;
+package ${basePackage}.generator;
 
 import cn.hutool.core.io.FileUtil;
 import freemarker.template.Configuration;
@@ -10,8 +10,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * @author Juechen
- * @version : DynamicGenerator.java
+ * @author ${author}
+ * @version : ${version}
  */
 public class DynamicGenerator {
 

@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 /**
  * @author Juechen
- * @version : MainGenerator.java
+ * @version : FileGenerator.java
  * @deseribe : 核心生成器
  */
 public class FileGenerator {
@@ -30,31 +30,6 @@ public class FileGenerator {
 
         // 执行模板生成
         DynamicFileGenerator.doGenerator(inputDynamicPath, outputDynamicPath, model);
-    }
-
-    /**
-     * 根据操作类型自动设置输出文本的默认值
-     * @param config 模板配置
-     */
-    public static void setDefaultOutputText(DataModel config) {
-        if (config.getOutputText() == null || config.getOutputText().isEmpty()) {
-            switch (config.getOperationType()) {
-                case SUM:
-                    config.setOutputText("SUM:");
-                    break;
-                case PRODUCT:
-                    config.setOutputText("PRODUCT:");
-                    break;
-                case MAX:
-                    config.setOutputText("MAX:");
-                    break;
-                case MIN:
-                    config.setOutputText("MIN:");
-                    break;
-                default:
-                    config.setOutputText("RESULT:");
-            }
-        }
     }
 
 }

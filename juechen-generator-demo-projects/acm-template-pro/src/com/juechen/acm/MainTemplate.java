@@ -3,14 +3,12 @@ package com.juechen.acm;
 import java.util.Scanner;
 
 /**
- * ACM 输入模板（多数之和）
- * @author juechen
- */
+  * ACM 输入模板
+  * @author yupi
+*/
 public class MainTemplate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-//        while (scanner.hasNext()) {
             // 读取输入元素个数
             int n = scanner.nextInt();
 
@@ -20,16 +18,12 @@ public class MainTemplate {
                 arr[i] = scanner.nextInt();
             }
 
-            // 处理问题逻辑，根据需要进行输出
-            // 示例：计算数组元素的和
-            int sum = 0;
+            int result = 0;
             for (int num : arr) {
-                sum += num;
+                result += num;
             }
 
-            System.out.println("求和结果: " + sum);
-//        }
-
+            System.out.println("求和结果：" + result);
         scanner.close();
     }
 }

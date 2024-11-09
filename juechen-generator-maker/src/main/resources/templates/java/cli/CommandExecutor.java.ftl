@@ -1,17 +1,16 @@
-package com.juechen.maker.cli;
+package ${basePackage}.cli;
 
-import com.juechen.maker.cli.command.ConfigCommand;
-import com.juechen.maker.cli.command.GenerateCommand;
-import com.juechen.maker.cli.command.ListCommand;
+import ${basePackage}.cli.command.ConfigCommand;
+import ${basePackage}.cli.command.GenerateCommand;
+import ${basePackage}.cli.command.ListCommand;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
 /**
- * @author Juechen
- * @version : CommandExecutor.java
- * @describe 相当于遥控器
+ * @author ${author}
+ * @version : ${version}
  */
-@Command(name = "juechen", mixinStandardHelpOptions = true)
+@Command(name = "${name}", mixinStandardHelpOptions = true)
 public class CommandExecutor implements Runnable {
 
     private final CommandLine commandLine;

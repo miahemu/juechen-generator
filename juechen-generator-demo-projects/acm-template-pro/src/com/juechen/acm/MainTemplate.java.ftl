@@ -22,33 +22,13 @@ public class MainTemplate {
                 arr[i] = scanner.nextInt();
             }
 
-<#if operationType == "SUM">
             int result = 0;
             for (int num : arr) {
                 result += num;
             }
-<#elseif operationType == "PRODUCT">
-            int result = 1;
-            for (int num : arr) {
-                result *= num;
-            }
-<#elseif operationType == "MAX">
-            int result = arr[0];
-            for (int num : arr) {
-                if (num > result) {
-                    result = num;
-                }
-            }
-<#elseif operationType == "MIN">
-            int result = arr[0];
-            for (int num : arr) {
-                if (num < result) {
-                    result = num;
-                }
-            }
-</#if>
 
-            System.out.println("${outputText}" + result);
+
+            System.out.println("${outputText!'result:'}" + result);
 <#if loop>
         }
 </#if>

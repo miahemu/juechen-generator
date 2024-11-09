@@ -7,7 +7,7 @@ import lombok.Data;
  * 用于设置模板生成的配置参数
  *
  * @author Juechen
- * @version MainTemplateConfig.java
+ * @version DataModel.java
  */
 @Data
 public class DataModel {
@@ -27,18 +27,4 @@ public class DataModel {
      */
     private String outputText;
 
-    /**
-     * 运算类型（sum, product, max, min等）
-     */
-    private OperationType operationType = OperationType.SUM;
-
-    /**
-     * 操作类型的枚举定义
-     */
-    public enum OperationType {
-        SUM,       // 求和
-        PRODUCT,   // 乘积
-        MAX,       // 最大值
-        MIN        // 最小值
-    }
 }
