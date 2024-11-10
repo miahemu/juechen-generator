@@ -125,9 +125,6 @@ public class MainGenerator {
         // - 拷贝源模板文件
         FileUtil.copy(sourceCopyDestPath, distOutputPath, true);
 
-
-
-
     }
 
 }

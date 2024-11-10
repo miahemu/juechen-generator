@@ -7,7 +7,7 @@
   "createTime": "2024-11-08",
   "fileConfig": {
     "inputRootPath": ".source/acm-template-pro",
-    "outputRootPath": "/Users/suyue/Documents/jetbrains/java2024/juechen-generator/acm-template-pro",
+    "outputRootPath": "generated",
     "sourceRootPath": "/Users/suyue/Documents/jetbrains/java2024/juechen-generator/juechen-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
