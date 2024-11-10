@@ -31,9 +31,5 @@ public class JarGenerator {
         int exitCode = process.waitFor();
         System.out.println("命令执行结束，退出码：" + exitCode);
     }
-
-    public static void main(String[] args) throws IOException, InterruptedException {
-        doGenerate("/Users/suyue/Documents/jetbrains/java2024/juechen-generator/juechen-generator-maker/generated/acm-template-pro-generator");
-    }
 }
 
