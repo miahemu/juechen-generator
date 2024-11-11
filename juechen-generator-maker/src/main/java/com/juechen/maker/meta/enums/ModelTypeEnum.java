@@ -7,7 +7,6 @@ package com.juechen.maker.meta.enums;
 public enum ModelTypeEnum {
 
     STRING("字符串","string"),
-
     BOOLEAN("布尔","boolean");
 
     private final String text;

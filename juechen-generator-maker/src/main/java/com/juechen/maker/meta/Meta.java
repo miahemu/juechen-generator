@@ -40,6 +40,9 @@ public class Meta {
             private String type;
             private String generateType;
             private String condition;
+            private String groupName;
+            private String groupKey;
+            private List<FileInfo> files;
         }
     }
 

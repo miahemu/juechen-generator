@@ -79,6 +79,13 @@ public class MetaValidator {
             List<Meta.FileConfig.FileInfo> fileInfoList = fileConfig.getFiles();
             if (CollectionUtil.isNotEmpty(fileInfoList)) {
                 for (Meta.FileConfig.FileInfo fileInfo : fileInfoList) {
+                    // type: 默认 inputPath 有文件后缀（如 .java）为file，否则为 dir
+                    String type = fileInfo.getType();
+                    // 类型为group，不校验
+                    if (FileTypeEnum.GROUP.getValue().equals(type)){
+                        continue;
+                    }
+
                     String inputPath = fileInfo.getInputPath();
                     if (StrUtil.isBlank(inputPath)) {
                         throw new MetaException("inputPath不能为空");
@@ -89,8 +96,6 @@ public class MetaValidator {
                         fileInfo.setOutputPath(inputPath);
                     }
 
-                    // type: 默认 inputPath 有文件后缀（如 .java）为file，否则为 dir
-                    String type = fileInfo.getType();
                     if (StrUtil.isBlank(type)) {
                         // 获取文件后缀
                         if (StrUtil.isBlank(FileUtil.getSuffix(inputPath))) {

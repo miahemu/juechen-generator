@@ -111,7 +111,7 @@ public abstract class GenerateTemplate {
         outputFilePath = outputBaseJavaPackagePath + "/cli/CommandExecutor.java";
         DynamicFileGenerator.doGenerator(inputFilePath, outputFilePath, meta);
 
-        // Main
+        // GlobalApplication
         inputFilePath = inputResourcePath + File.separator + "templates/java/GlobalApplication.java.ftl";
         outputFilePath = outputBaseJavaPackagePath + "/GlobalApplication.java";
         DynamicFileGenerator.doGenerator(inputFilePath, outputFilePath, meta);
