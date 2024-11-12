@@ -35,7 +35,13 @@ public class MainGenerator {
         String outputPath;
 
     <#list modelConfig.models as modelInfo>
+        <#if modelInfo.groupKey??>
+        <#list modelInfo.models as subModelInfo>
+        ${subModelInfo.type} ${subModelInfo.fieldName} = model.${modelInfo.groupKey}.${subModelInfo.fieldName};
+        </#list>
+        <#else>
         ${modelInfo.type} ${modelInfo.fieldName} = model.${modelInfo.fieldName};
+        </#if>
     </#list>
     <#list fileConfig.files as fileInfo>
         <#if fileInfo.groupKey??>

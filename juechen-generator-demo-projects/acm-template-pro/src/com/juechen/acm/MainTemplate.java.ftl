@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
   * ACM 输入模板
-  * @author ${author!'Juechen'}
+  * @author ${mainTemplate.author}
 */
 public class MainTemplate {
     public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class MainTemplate {
             }
 
 
-            System.out.println("${outputText!'result:'}" + result);
+            System.out.println("${mainTemplate.outputText}" + result);
 <#if loop>
         }
 </#if>

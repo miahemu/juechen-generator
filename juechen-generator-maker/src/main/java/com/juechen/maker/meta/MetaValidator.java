@@ -11,6 +11,7 @@ import com.juechen.maker.meta.enums.ModelTypeEnum;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Juechen
@@ -30,6 +31,19 @@ public class MetaValidator {
             List<Meta.ModelConfig.ModelInfo> modelInfoList = modelConfig.getModels();
             if (CollectionUtil.isNotEmpty(modelInfoList)) {
                 for (Meta.ModelConfig.ModelInfo modelInfo : modelInfoList) {
+                    if (StrUtil.isNotBlank(modelInfo.getGroupKey())){
+                        List<Meta.ModelConfig.ModelInfo> subModelInfoList = modelInfo.getModels();
+                        // 为了后面的commandLine.execute("--author","-outputText")
+                        String allArgsStr = subModelInfoList.stream()
+                                .map(subModelInfo -> String.format("\"--%s\"", subModelInfo.getFieldName()))
+                                .collect(Collectors.joining(", "));
+                        modelInfo.setAllArgsStr(allArgsStr);
+                        continue;
+                    }
+
+                    if(StrUtil.isNotBlank(modelInfo.getGroupKey())){
+                        continue;
+                    }
                     String fieldName = modelInfo.getFieldName();
                     if (StrUtil.isBlank(fieldName)) {
                         throw new MetaException("fieldName不能为空");

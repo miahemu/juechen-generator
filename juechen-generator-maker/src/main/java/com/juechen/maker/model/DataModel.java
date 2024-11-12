@@ -18,13 +18,24 @@ public class DataModel {
     private boolean loop;
 
     /**
-     * 作者注释
+     * 核心模版
      */
-    private String author;
+    public MainTemplate mainTemplate = new MainTemplate();
 
     /**
-     * 输出信息的前缀
+     * 用于生成模版核心文件
      */
-    private String outputText;
+    @Data
+    public static class MainTemplate {
+        /**
+         * 作者注释
+         */
+        public String author = "juechen";
+
+        /**
+         * 输出信息的前缀
+         */
+        public String outputText = "sum = ";
+    }
 
 }
