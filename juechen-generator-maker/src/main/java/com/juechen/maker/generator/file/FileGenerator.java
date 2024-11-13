@@ -1,6 +1,5 @@
 package com.juechen.maker.generator.file;
 
-import com.juechen.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -14,7 +13,7 @@ import java.nio.file.Paths;
  */
 public class FileGenerator {
 
-    public static void doGenerator(DataModel model) throws IOException, TemplateException {
+    public static void doGenerator(Object model) throws IOException, TemplateException {
         // 获取项目根目录路径
         String projectPath = System.getProperty("user.dir");
         String parentPath = new File(projectPath).getParentFile().getAbsolutePath();

@@ -10,7 +10,7 @@ public class MainTemplate {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-//        while (scanner.hasNext()) {
+        while (scanner.hasNext()) {
             // 读取输入元素个数
             int n = scanner.nextInt();
 
@@ -28,7 +28,7 @@ public class MainTemplate {
             }
 
             System.out.println("求和结果: " + sum);
-//        }
+        }
 
         scanner.close();
     }
