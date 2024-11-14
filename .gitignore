@@ -4,6 +4,7 @@ juechen-generator.iml
 juechen-generator-basic.iml
 acm-template-pro
 target
+.temp
 
 ### Java template
 # Compiled class file
