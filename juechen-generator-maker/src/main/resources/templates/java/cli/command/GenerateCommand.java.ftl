@@ -15,6 +15,14 @@ ${indent}@Option(names = {<#if modelInfo.abbr??>"-${modelInfo.abbr}", </#if>"--$
 ${indent}private ${modelInfo.type} ${modelInfo.fieldName}<#if modelInfo.defaultValue??> = ${modelInfo.defaultValue?c}</#if>;
 </#macro>
 
+<#-- 生成命令调用 -->
+<#macro generateCommand indent modelInfo>
+${indent}System.out.println("输入${modelInfo.groupName}配置：");
+${indent}CommandLine ${modelInfo.groupKey}CommandLine = new CommandLine(${modelInfo.type}Command.class);
+${indent}${modelInfo.groupKey}CommandLine.execute(${modelInfo.allArgsStr});
+</#macro>
+
+
 /**
  * @author ${author}
  * @version : ${version}
@@ -59,14 +67,10 @@ public class GenerateCommand implements Callable<Integer> {
         <#if modelInfo.groupKey??>
         <#if modelInfo.condition??>
         if(${modelInfo.condition}){
-            System.out.println("输入${modelInfo.groupName}配置:");
-            CommandLine commandLine = new CommandLine(${modelInfo.type}Command.class);
-            commandLine.execute(${modelInfo.allArgsStr});
+            <@generateCommand indent="            " modelInfo=modelInfo/>
         }
         <#else>
-        System.out.println("输入 ${modelInfo.groupName}配置:");
-        CommandLine commandLine = new CommandLine(${modelInfo.type}Command.class);
-        commandLine.execute(${modelInfo.allArgsStr});
+        <@generateCommand indent="        " modelInfo=modelInfo/>
         </#if>
         </#if>
         </#list>
