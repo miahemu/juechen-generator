@@ -13,8 +13,8 @@
         "fieldName": "basePackage",
         "type": "String",
         "description": "基础包名",
-        "defaultValue": "com.yupi",
-        "replaceText": "com.yupi"
+        "defaultValue": "com.juechen",
+        "replaceText": "com.juechen"
       }
     ]
   }

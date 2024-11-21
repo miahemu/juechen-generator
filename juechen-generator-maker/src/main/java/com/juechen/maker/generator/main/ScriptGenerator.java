@@ -29,7 +29,7 @@ public class ScriptGenerator {
             Files.setPosixFilePermissions(Paths.get(outputPath), permissions);
         } catch (Exception e) {}
 
-          // windows
+        // windows
         sb = new StringBuilder();
         sb.append("@echo off").append("\n");
         sb.append(String.format("java -jar %s %%*", jarPath)).append("\n");
