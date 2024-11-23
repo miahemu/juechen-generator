@@ -39,16 +39,13 @@ export async function getInitialState(): Promise<InitialState> {
 
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 // @ts-ignore
-export const layout: RunTimeLayoutConfig = ({ initialState }) => {
+export const layout: RunTimeLayoutConfig = () => {
   return {
     logo,
     avatarProps: {
       render: () => {
         return <AvatarDropdown />;
       },
-    },
-    waterMarkProps: {
-      content: initialState?.currentUser?.userName,
     },
     footerRender: () => <Footer />,
     menuHeaderRender: undefined,
