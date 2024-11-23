@@ -2,6 +2,8 @@ package com.juechen.web.manager;
 
 import com.juechen.web.config.CosClientConfig;
 import com.qcloud.cos.COSClient;
+import com.qcloud.cos.model.COSObject;
+import com.qcloud.cos.model.GetObjectRequest;
 import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.model.PutObjectResult;
 import org.springframework.stereotype.Component;
@@ -49,4 +51,16 @@ public class CosManager {
                 file);
         return cosClient.putObject(putObjectRequest);
     }
+
+    /**
+     * 下载对象
+     *
+     * @param key 唯一键
+     * @return
+     */
+    public COSObject getObject(String key) {
+        GetObjectRequest getObjectRequest = new GetObjectRequest(cosClientConfig.getBucket(), key);
+        return cosClient.getObject(getObjectRequest);
+    }
+
 }

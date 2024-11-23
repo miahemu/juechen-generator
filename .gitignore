@@ -2,6 +2,7 @@
 .idea
 juechen-generator.iml
 juechen-generator-basic.iml
+application-local.yml
 acm-template-pro
 target
 .temp
