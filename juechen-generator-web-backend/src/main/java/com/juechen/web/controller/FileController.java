@@ -5,7 +5,6 @@ import com.juechen.web.annotation.AuthCheck;
 import com.juechen.web.common.BaseResponse;
 import com.juechen.web.common.ErrorCode;
 import com.juechen.web.common.ResultUtils;
-import com.juechen.web.constant.FileConstant;
 import com.juechen.web.constant.UserConstant;
 import com.juechen.web.exception.BusinessException;
 import com.juechen.web.manager.CosManager;
@@ -142,7 +141,7 @@ public class FileController {
             multipartFile.transferTo(file);
             cosManager.putObject(filepath, file);
             // 返回可访问地址
-            return ResultUtils.success(FileConstant.COS_HOST + filepath);
+            return ResultUtils.success(filepath);
         } catch (Exception e) {
             log.error("file upload error, filepath = " + filepath, e);
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "上传失败");

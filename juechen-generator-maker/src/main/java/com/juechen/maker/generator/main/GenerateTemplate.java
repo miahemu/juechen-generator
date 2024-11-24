@@ -3,6 +3,7 @@ package com.juechen.maker.generator.main;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.ZipUtil;
 import com.juechen.maker.generator.file.DynamicFileGenerator;
 import com.juechen.maker.meta.Meta;
 import com.juechen.maker.meta.MetaManager;
@@ -49,7 +50,7 @@ public abstract class GenerateTemplate {
         return shellOutputFilePath;
     }
 
-    protected void buildDist(String outputPath, String sourceCopyDestPath, String shellOutputFilePath, String jarPath) {
+    protected String buildDist(String outputPath, String sourceCopyDestPath, String shellOutputFilePath, String jarPath) {
         String distOutputPath = outputPath + "-dist";
         // - 拷贝 jar 包
         String targetAbsolutePath = distOutputPath + File.separator + "target";
@@ -61,6 +62,7 @@ public abstract class GenerateTemplate {
         FileUtil.copy(shellOutputFilePath + ".bat", distOutputPath, true);
         // - 拷贝源模板文件
         FileUtil.copy(sourceCopyDestPath, distOutputPath, true);
+        return distOutputPath;
     }
 
     protected String buildJar(String outputPath,Meta meta) throws IOException, InterruptedException {
@@ -69,6 +71,19 @@ public abstract class GenerateTemplate {
         String jarPath = "target" + File.separator + jarName;
         return jarPath;
     }
+
+    /**
+     * 制作压缩包
+     *
+     * @param outputPath
+     * @return 压缩包路径
+     */
+    protected String buildZip(String outputPath) {
+        String zipPath = outputPath + ".zip";
+        ZipUtil.zip(outputPath, zipPath);
+        return zipPath;
+    }
+
 
     protected void GenerateCode(Meta meta, String outputPath) throws IOException, TemplateException {
         // 读取 resources 目录

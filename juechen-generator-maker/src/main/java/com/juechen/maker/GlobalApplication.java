@@ -1,6 +1,7 @@
 package com.juechen.maker;
 
-import com.juechen.maker.generator.main.MainGenerator;
+import com.juechen.maker.generator.main.GenerateTemplate;
+import com.juechen.maker.generator.main.ZipGenerator;
 import freemarker.template.TemplateException;
 
 import java.io.IOException;
@@ -12,7 +13,8 @@ import java.io.IOException;
 public class GlobalApplication {
 
     public static void main(String[] args) throws TemplateException, IOException, InterruptedException {
-        MainGenerator mainGenerator = new MainGenerator();
-        mainGenerator.doGenerate();
+//        GenerateTemplate mainGenerator = new MainGenerator();
+        GenerateTemplate zipGenerator = new ZipGenerator();
+        zipGenerator.doGenerate();
     }
 }
