@@ -25,7 +25,8 @@
 
 代码生成器创建页（分步表单）：
 
-![](https://pic.yupi.icu/1/image%20(13).png)
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/78df8535-20b5-4586-8d03-c95e8a3f02d7">
+
 
 代码生成器创建页（复杂嵌套动态表单）：
 
