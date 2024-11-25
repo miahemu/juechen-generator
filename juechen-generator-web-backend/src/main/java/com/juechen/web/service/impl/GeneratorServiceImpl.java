@@ -52,7 +52,7 @@ public class GeneratorServiceImpl extends ServiceImpl<GeneratorMapper, Generator
         String description = generator.getDescription();
         // 创建时，参数不能为空
         if (add) {
-            ThrowUtils.throwIf(StringUtils.isAnyBlank(name, description), ErrorCode.PARAMS_ERROR);
+            ThrowUtils.throwIf(StringUtils.isAnyBlank(name, description), ErrorCode.PARAMS_ERROR,"文件名称和描述不能为空哦！！！");
         }
         // 有参数则校验
         if (StringUtils.isNotBlank(name) && name.length() > 80) {

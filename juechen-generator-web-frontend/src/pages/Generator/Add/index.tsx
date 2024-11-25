@@ -66,6 +66,7 @@ const GeneratorAddPage: React.FC = () => {
       loadData();
     }
   }, [id]);
+
   /**
    * 创建
    * @param values
@@ -81,6 +82,7 @@ const GeneratorAddPage: React.FC = () => {
       message.error('创建失败，' + error.message);
     }
   };
+
   /**
    * 更新
    * @param values
