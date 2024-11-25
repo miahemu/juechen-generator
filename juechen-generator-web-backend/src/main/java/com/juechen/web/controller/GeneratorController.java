@@ -36,8 +36,6 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * 帖子接口
- *
  * @author 玦尘
  * @from <a href="https://github.com/miahemu/juechen-generator">玦尘 - 代码生成器共享平台</a>
  */
