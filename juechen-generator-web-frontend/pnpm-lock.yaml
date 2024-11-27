@@ -3748,7 +3748,7 @@ packages:
 
   /@stylelint/postcss-markdown/0.36.2_j55xdkkcxc32kvnyvx3y7casfm:
     resolution: {integrity: sha512-2kGbqUVJUGE8dM+bMzXG/PYUWKkjLIkRLWNh39OaADkiabDRdw8ATFCgbMz5xdIcvwspPAluSL7uY+ZiTWdWmQ==}
-    deprecated: 'Use the original unforked package instead: postcss-markdown'
+    deprecated: 'User the original unforked package instead: postcss-markdown'
     peerDependencies:
       postcss: '>=7.0.0'
       postcss-syntax: '>=0.36.2'
@@ -14211,7 +14211,7 @@ packages:
 
   /react-native-swipeout/2.3.6:
     resolution: {integrity: sha512-t9suUCspzck4vp2pWggWe0frS/QOtX6yYCawHnEes75A7dZCEE74bxX2A1bQzGH9cUMjq6xsdfC94RbiDKIkJg==}
-    deprecated: Package no longer supported. Use at your own risk or consider using https://github.com/software-mansion/react-native-gesture-handler
+    deprecated: Package no longer supported. User at your own risk or consider using https://github.com/software-mansion/react-native-gesture-handler
     dependencies:
       create-react-class: 15.7.0
       prop-types: 15.8.1
