@@ -88,7 +88,7 @@ public class GeneratorController {
 
         // 独立的工作空间
         String projectPath = System.getProperty("user.dir");
-        String tempDirPath = String.format("%s/.temp/use/%s", projectPath);
+        String tempDirPath = String.format("%s/.temp/use/%s", projectPath,id);
         String zipFilePath = tempDirPath + "/dist.zip";
 
         if (!FileUtil.exist(zipFilePath)) {
