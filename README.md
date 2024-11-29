@@ -30,7 +30,8 @@
 
 代码生成器创建页（复杂嵌套动态表单）：
 
-![](https://pic.yupi.icu/1/image%20(14).png)
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/5fc64c56-b0cf-4beb-8564-e2d3f4ece04d">
+
 
 在线上传和制作代码生成器：
 
@@ -38,11 +39,13 @@
 
 代码生成器详情页：
 
-![](https://pic.yupi.icu/1/image%20(16).png)
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/a64114d5-da1c-4a11-8011-36f585795d19">
+
 
 在线使用代码生成器：
 
-![](https://pic.yupi.icu/1/image%20(17).png)
+<img width="1196" alt="image" src="https://github.com/user-attachments/assets/53397a36-cf09-4c15-b2ae-2810f387f418">
+
 
 
 ### 技术选型（全栈项目）
