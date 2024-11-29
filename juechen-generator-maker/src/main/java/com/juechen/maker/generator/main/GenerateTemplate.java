@@ -1,7 +1,6 @@
 package com.juechen.maker.generator.main;
 
 import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.ZipUtil;
 import com.juechen.maker.generator.file.DynamicFileGenerator;
@@ -16,13 +15,15 @@ import java.io.*;
  * @version : GenerateTemplate.java
  */
 public abstract class GenerateTemplate {
-    public void doGenerate() throws IOException, TemplateException, InterruptedException {
-        Meta meta = MetaManager.getMetaObject();
-        System.out.println(meta);
 
-        // 0、输出根路径
+    public void doGenerate() throws TemplateException, IOException, InterruptedException {
+        Meta meta = MetaManager.getMetaObject();
         String projectPath = System.getProperty("user.dir");
         String outputPath = projectPath + File.separator + "generated" + File.separator + meta.getName();
+        doGenerate(meta,outputPath);
+    }
+
+    public void doGenerate(Meta meta,String outputPath) throws IOException, TemplateException, InterruptedException {
         if (!FileUtil.exist(outputPath)) {
             FileUtil.mkdir(outputPath);
         }
@@ -86,9 +87,7 @@ public abstract class GenerateTemplate {
 
 
     protected void GenerateCode(Meta meta, String outputPath) throws IOException, TemplateException {
-        // 读取 resources 目录
-        ClassPathResource classPathResource = new ClassPathResource("");
-        String inputResourcePath = classPathResource.getAbsolutePath();
+        String inputResourcePath = "";
 
         // Java 包基础路径
         // com.juechen

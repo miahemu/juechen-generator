@@ -1,6 +1,6 @@
 package com.juechen.web.model.dto.generator;
 
-import com.juechen.web.meta.Meta;
+import com.juechen.maker.meta.Meta;;
 import lombok.Data;
 
 import java.io.Serializable;

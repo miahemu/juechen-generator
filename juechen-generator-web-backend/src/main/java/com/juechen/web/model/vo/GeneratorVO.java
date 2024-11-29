@@ -1,7 +1,7 @@
 package com.juechen.web.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.juechen.web.meta.Meta;
+import com.juechen.maker.meta.Meta;;
 import com.juechen.web.model.entity.Generator;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
