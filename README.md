@@ -35,7 +35,8 @@
 
 在线上传和制作代码生成器：
 
-![](https://pic.yupi.icu/1/image%20(15).png)
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/10467f4a-1683-496b-b73f-8065d8c6bb3d">
+
 
 代码生成器详情页：
 
