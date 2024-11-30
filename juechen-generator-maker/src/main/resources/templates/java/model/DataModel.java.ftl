@@ -32,15 +32,13 @@ public class DataModel {
     @Data
     public static class ${modelInfo.type} {
     <#list modelInfo.models as modelInfo>
-    <@generateModel indent = "        " modelInfo=modelInfo/>
+        <@generateModel indent = "        " modelInfo=modelInfo/>
     </#list>
     }
 
     <#else>
     <@generateModel indent = "    " modelInfo=modelInfo/>
     </#if>
-
-
 </#list>
 
 }

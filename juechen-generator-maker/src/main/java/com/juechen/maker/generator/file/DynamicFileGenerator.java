@@ -9,6 +9,7 @@ import freemarker.template.TemplateException;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 
 /**
  * @author Juechen
@@ -36,7 +37,7 @@ public class DynamicFileGenerator {
         }
 
         // 使用 try-with-resources 自动管理资源
-        try (FileWriter out = new FileWriter(outputPath)) {
+        try (Writer out = new FileWriter(outputPath)) {
             template.process(model, out);
         } catch (TemplateException e) {
             throw new TemplateException("模板处理失败: " + e.getMessage(), e, e.getEnvironment());
