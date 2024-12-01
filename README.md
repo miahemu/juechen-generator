@@ -21,7 +21,8 @@
 
 主页（代码生成器搜索列表）：
 
-<img width="1470" alt="image" src="https://github.com/user-attachments/assets/adbbdf7d-c9e0-4917-bc65-e8c77d1d6ce5">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/e6408e5e-29e6-49dd-9df1-ff8cb3e48e90">
+
 
 代码生成器创建页（分步表单）：
 
